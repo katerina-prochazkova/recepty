@@ -1,0 +1,224 @@
+/* nejsme vcerejsi, pouzivame moderni box model */
+html {
+  box-sizing: border-box;
+}
+*,
+:after,
+:before {
+  box-sizing: inherit;
+}
+
+/* -------------------------------------------------- */
+
+/*
+pouzivame mobile first pristup
+tj. vychozi styly mimo media query jsou pro nejmensi mobilni zarizeni (telefony)
+s pribyvajici sirkou pridavame media query pro...
+tablety:
+@media (min-width: 480px) {
+}
+notebook/pc:
+@media (min-width: 860px) {
+}
+*/
+
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.paticka {
+  text-align: center;
+  font-size: 14px;
+  color: silver;
+}
+
+.paticka a {
+  color: silver;
+}
+
+/* ------------------------------- */
+/* ----- DOLE BUDE TVOJE CSS ----- */
+/* ------------------------------- */
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h2 {
+  font-family: Raleway;
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.doporucujeme {
+  display: flex; /*flex pro hlavni-recept a recepty */
+  flex-direction: column;
+  width: 350px;
+  color: white;
+}
+
+.recepty {
+  display: flex; /*flex pro ne-hlavni recept2-recept5*/
+  flex-direction: column;
+}
+
+.hlavni-recept {
+  display: flex; /*flex pro hlavni recept*/
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 1px solid white;
+}
+.recept {
+  display: flex; /*flex pro jednotlive ne-hlavni recepty*/
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid white;
+}
+
+.recept-meta {
+  display: flex; /*flex pro recept-kategorie a recept-komentare */
+  justify-content: space-between;
+}
+
+.hlavni-recept .recept-nazev {
+  font-family: Raleway;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.recept-kategorie,
+.recept-komentare {
+  font-family: Source Sans Pro;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.hlavni-recept {
+  min-height: 200px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(images/salat.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 10px;
+}
+
+.recept {
+  min-height: 90px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 10px;
+}
+.recept2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(images/chlebicek.jpg);
+}
+
+.recept3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(images/tacos.jpg);
+}
+
+.recept4 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(images/cizrna.jpg);
+}
+
+.recept5 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(images/burger.jpg);
+}
+
+.hlavni-recept:hover {
+  background-image: url(images/salat.jpg);
+}
+
+.recept2:hover {
+  background-image: url(images/chlebicek.jpg);
+}
+
+.recept3:hover {
+  background-image: url(images/tacos.jpg);
+}
+
+.recept4:hover {
+  background-image: url(images/cizrna.jpg);
+}
+
+.recept5:hover {
+  background-image: url(images/burger.jpg);
+}
+
+.paticka {
+  width: 350px;
+}
+
+/* ---- pro TABLET --- */
+
+@media screen and (min-width: 540px) and (max-width: 960px) {
+  .doporucujeme {
+    width: 540px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .hlavni-recept .recept-nazev {
+    font-size: 36px;
+  }
+
+  .recepty {
+    display: flex; /*flex pro ne-hlavni recept2-recept5*/
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .hlavni-recept {
+    min-height: 250px;
+    padding: 20px;
+  }
+  .recept {
+    min-height: 150px;
+    width: 50%;
+    padding: 20px;
+  }
+}
+
+/* ---- pro PC --- */
+
+@media screen and (min-width: 960px) {
+  .doporucujeme {
+    width: 960px;
+    height: 400px;
+    flex-direction: row;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .hlavni-recept .recept-nazev {
+    font-size: 48px;
+  }
+
+  .recepty {
+    display: flex; /*flex pro ne-hlavni recept2-recept5*/
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .recept {
+    height: 200px;
+    width: 50%;
+    margin: 0;
+  }
+}
